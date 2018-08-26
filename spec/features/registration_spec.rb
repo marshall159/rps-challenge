@@ -9,10 +9,7 @@ feature 'user registration' do
   end
 
   scenario 'registers a name' do
-    visit('/')
-    fill_in :user_name, with: 'Bob'
-    click_button "Submit"
+    sign_in_and_play
     expect(page).to have_content('Welcome, Bob')
   end
-
 end
