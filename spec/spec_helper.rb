@@ -2,7 +2,11 @@ require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 require 'rspec'
-require_relative '../app'
+
+ENV['RACK_ENV'] = 'test'
+
+# require our Sinatra app file
+require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
 Capybara.app = Game
 
