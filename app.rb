@@ -7,10 +7,10 @@ class Game < Sinatra::Base
   end
 
   get '/' do
-    erb :register
+    erb :index
   end
 
-  post '/' do
+  post '/name' do
     session[:user_name] = params[:user_name]
     redirect '/play'
   end

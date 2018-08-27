@@ -5,10 +5,10 @@ require 'spec_helper'
 feature 'user registration' do
   scenario 'visit the homepage' do
     visit('/')
-    expect(page).to have_content 'Register'
+    expect(page).to have_content('Register')
   end
 
-  scenario 'registers a name' do
+  scenario 'registers and displays name' do
     sign_in_and_play
     expect(page).to have_content('Welcome, Bob')
   end
