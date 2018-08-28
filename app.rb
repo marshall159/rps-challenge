@@ -15,9 +15,20 @@ class Game < Sinatra::Base
     redirect '/play'
   end
 
-  get '/play' do
+  before '/play/*' do
     @user_name = session[:user_name]
+  end
+
+  get '/play/:choice' do
+    @user_choice = params[:choice]
+    erb :choice
+  end
+
+  get '/play' do
+    # @user_name = session[:user_name]
     erb :play
   end
+
+
 
 end

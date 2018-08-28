@@ -19,5 +19,7 @@ feature 'playing a game' do
     sign_in_and_play
     click_on('Rock')
     expect(page).to have_content('Bob has chosen Rock')
+    expect(page).not_to have_content('Paper')
+    expect(page).not_to have_content('Scissors')
   end
 end
